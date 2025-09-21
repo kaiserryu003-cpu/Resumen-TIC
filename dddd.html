@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumen TIC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    header img {
+      height: 80px;
+    }
+    header .titles {
+      text-align: left;
+    }
+    header .titles h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header .titles h2 {
+      margin: 5px 0 0;
+      font-size: 16px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .card h3 {
+      text-align: center;
+      padding: 10px;
+      background: #eee;
+      margin: 0;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 70%;
+      max-width: 700px;
+      max-height: 90%;
+      overflow-y: auto;
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+      color: red;
+    }
+    .accordion {
+      background: #eee;
+      cursor: pointer;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      outline: none;
+      width: 100%;
+      text-align: left;
+      font-size: 16px;
+      transition: background 0.3s;
+      border-radius: 5px;
+    }
+    .accordion:hover {
+      background: #ccc;
+    }
+    .panel {
+      display: none;
+      background: #fafafa;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .panel img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .social a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Logo_UNAP.png/250px-Logo_UNAP.png" alt="Logo UNA Puno">
+  <div class="titles">
+    <h1>Universidad Nacional del Altiplano - Puno</h1>
+    <h2>Facultad de Ciencias Contables y Administrativas</h2>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card" onclick="openModal('semana1')">
+    <img src="https://img.freepik.com/foto-gratis/fondo-inteligencia-artificial_23-2149739757.jpg" alt="Semana 1">
+    <h3>Semana 1</h3>
+  </div>
+  <div class="card" onclick="openModal('semana2')">
+    <img src="https://www.bdtask.com/blog/uploads/difference-between-hardware-and-software.jpg" alt="Semana 2">
+    <h3>Semana 2</h3>
+  </div>
+  <div class="card" onclick="openModal('semana3')">
+    <img src="https://imecaf.com/blog/wp-content/uploads/Sistemas-Operativos-1.jpg" alt="Semana 3">
+    <h3>Semana 3</h3>
+  </div>
+  <div class="card" onclick="openModal('semana4')">
+    <img src="https://concepto.de/wp-content/uploads/2018/10/red-LAN2-e1539806574511.jpg" alt="Semana 4">
+    <h3>Semana 4</h3>
+  </div>
+</div>
+
+<!-- SEMANA 1 -->
+<div id="semana1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('semana1')">&times;</span>
+    <h2>Semana 1 - Inteligencia Artificial</h2>
+    <p>Clasificación de las inteligencias artificiales para el estudio de esta tecnología en evolución.</p>
+    
+    <button class="accordion">Aprendizaje Automático</button>
+    <div class="panel">
+      <p>Permite que las computadoras aprendan a partir de datos sin programación explícita.</p>
+      <img src="https://miro.medium.com/0*afFODfO3xSNWJ2j-.jpg" alt="Machine Learning">
+    </div>
+
+    <button class="accordion">Aprendizaje No Supervisado</button>
+    <div class="panel">
+      <p>Descubre patrones ocultos en datos sin etiquetas.</p>
+      <img src="https://media.licdn.com/dms/image/v2/D5612AQGXGnuCDx-lkQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1689427341827?e=2147483647&v=beta&t=-CHKpSU4hgCvVlu-W6aeFG0huT7G2V4aus2zYVtAuc0" alt="Unsupervised Learning">
+    </div>
+
+    <button class="accordion">Aprendizaje Profundo</button>
+    <div class="panel">
+      <p>Usa redes neuronales profundas para reconocer imágenes y voz.</p>
+      <img src="https://www.initiumsoft.com/blog_initium/wp-content/uploads/2024/08/deep-learning.webp" alt="Deep Learning">
+    </div>
+  </div>
+</div>
+
+<!-- SEMANA 2 -->
+<div id="semana2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('semana2')">&times;</span>
+    <h2>Semana 2 - Componentes Internos</h2>
+    <p>Identificación del hardware y software de un ordenador.</p>
+    
+    <button class="accordion">Hardware</button>
+    <div class="panel">
+      <ul>
+        <li><b>Procesador:</b> ejecuta instrucciones.</li>
+        <li><b>RAM:</b> memoria temporal.</li>
+        <li><b>Placa base:</b> conecta los componentes.</li>
+        <li><b>Disco duro/SSD:</b> almacena datos.</li>
+      </ul>
+      <img src="https://www.ceupe.com/images/easyblog_articles/3902/ejemplos-de-hardware.png" alt="Hardware">
+    </div>
+
+    <button class="accordion">Software</button>
+    <div class="panel">
+      <ul>
+        <li><b>Sistema operativo:</b> gestiona hardware y aplicaciones.</li>
+        <li><b>BIOS:</b> inicia el sistema.</li>
+        <li><b>Firmware:</b> controla dispositivos.</li>
+      </ul>
+      <img src="https://aniwin.com/wp-content/uploads/2023/10/tipos-de-software.jpg" alt="Software">
+    </div>
+  </div>
+</div>
+
+<!-- SEMANA 3 -->
+<div id="semana3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('semana3')">&times;</span>
+    <h2>Semana 3 - Sistemas Operativos</h2>
+    <p>Tipos de sistemas operativos y su adopción en empresas.</p>
+    
+    <button class="accordion">Windows</button>
+    <div class="panel">
+      <p>Popular en empresas por facilidad de uso.</p>
+      <img src="https://concepto.de/wp-content/uploads/2018/09/sjfogvgbk-e1537188125611-800x400.jpg" alt="Windows">
+    </div>
+
+    <button class="accordion">Linux</button>
+    <div class="panel">
+      <p>Código abierto, usado en servidores y entornos científicos.</p>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAABX1BMVEX////5+fn/tAAzMzM1NTUuLi7/tQD///04ODhAQEAxMTEtLS37+/soKCgAAAD/twAhISGLi4uDg4MXFxdMTEwgICDv7+/j4+O9vb08PDyrq6sbGxtVVVW2trb/uwBDQ0Nvb2/Kysp8fHwLCwtgYGBycnJoaGjU1NScnJy7u7uSkpLd3d1aWlqbm5vy8vL2//kUFRsoKCw+OAtMRRobFQDd39khHCqSaSLCjyHQmR/MjACPdTkiHSEiJzAOHhuTfV7gpwjYmwuLflaLWgiKbxlqRQltXCPDmwDIhRt3Yx5zVg/vrw83Lx0vIjNmTiO0fyCysKOyixWhdxfWmRS6wLKajngNCyWEYxcwKyY5KSFoUkKVZQAOFSSyfgByTABeRABZQiNJNCB1blt9ZACOioMnHgBKLw9DPSB4VxvotA00GQClfRYxICKBgnAsKDhbV0VzakpjPxxwVC5pUgCopbE6k92hAAAJ8ElEQVR4nO2d/XPTyBmAV1+OvtaSJVuyJXttyXbs2I7B5VJISo64fB2nI/TCXTmOC5CjLaS0pXfh/5/uSk6wZTvAdAZpZvcZSMaOf9g88+6rd1evNgAwGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwGg8FgpAkGYWhtB1zW48g/44FtQqhB0y+GbtaDyTkBhGKMIAjQr2Y9nFzjtVXhAlGwG1kPKMdU28IcOL6KvayHlFscX0rJUmtZjym3hJqQkiX4bCKuhrOFJaRy1qPKKVVzWZbQdrIeVj4ZQEFcklVh5cNKWhLJUkmVJUqz/AW3sx5WPhlJEtSSklT1O10z1gXDrIeVT+qVViOsEFdSGa90uE2IZWmbWQ8rn5RH+EuJLHe0MQC6zom4nNc6WQ8rn9QaoDd2KoKI85Q7CADoQyZrHXJQLUK9I4l+j7NhMQDVCpuG66gFIaw0ShPhquNVVGiBrYoqwG7Ww8on5e2SNumHf7j21Y63r04GICTTkMlaSUfe+ePk+g3E7+796eY+dFyy/NFaWQ8rn3S/3r51wE8Nfg/x0fGfd+qqyHLWOsL92wWeJ//If+PgDl7+iFI962HlE+suKhiFGJ7njQK6N8GLRSnrYeWT7n0sKw4ro8Ab0TfowUQQRLbtsJLNbw8Qjixsikdo9xsUfUdW1eZW1uPKJbWHh48iZBgGMh4fHRjHf2mqZJ04ynpcecS1J/3vjx/t7d04OnqM0HUXdMlKWrCDrEeWQ/qm7fywh6JphBCa3uJ0/A6RpSpZjyyHyKqgg+oRURXdaWxwHAj8eP/P7Gc9tNxR9XH9yV0Zv//x1o8/jDd0jtOd2S1Xm93HT1GWzG3AcUk7CEfQQTO+jyiqrDBdBE85P0gknaOTWxjxbXzfy3p4eQIHkSrYnK7rC7J69qxLpMIq0zk8X5Y6YMEVVgdqyc0ekS2n5+A0VahsLc5CIsuDSfeRaLPbhxeUcHKSFuOKiydlZSZLlfSsx5gXhm1RML1UYBFZ5GZP0iMCS4DpiqlLglrj0hBZgX/eB2izVq0YsqzBZfqSLVKX2nFckVVPM+th5gKXFAi4Sl8hiwNbNq6z4qnIii1CXZKaOLDS+X1mqws3m2TVI0rmOOuRZo+HF4XN8sq4SiZiZVAjZbxolrIeauY4vlQO28E6WRwIodaw48TFdpi70NyurA0sLGtoSy2ySMTlg5X1YDMmaKt1C9fna2XpoK76PaiShY9NeWg1JehBc7zWFQ4tz4R9K95/gHRvA1Z9wWz44frAIineV0cB22EmZYNa9tqXzEISWmVNdP14/8EeZj3gDBnaOGuXis7qGutclgU1Z7YdT3Nhug1F6HUVwF0qyzMlxxepb8ctSwKWFX5EVmDXh0lk0dw0qeO0DT1r5Rp6Tlav6DWSpy9ovj1N9hTgtpfeIl2W5XRMqFIui/T2aR23umYRfY5TBV7fqmNdNPcB7vx1X1J9zrlUls5VrU693rGsukrzwym9r558+9PVBtAvkaWDUlvTJFWCmiRX6G0SGV+LELr/VI3DZy39i8dbxcnVwQ6dW/EboBWRFr/7V9M3DBcC6+fd784fMr+5G03PKJ2I1WeItI+it79sgnWy9OAYnajJY4jSA8Tz6DmNOw964wXptuVxbL3cH43XVA/AO0D3Elnq08jATGl7anojGHReHCddyZjTh5rUWx1coB+ht/vx3TD4mDScGhFlm8vDk6MD0jw6c8UbjyZCu7/SFtiOjOipJKr7T6eIfL6Afs16+F+WMp5P/Adw2nojCf7IWWELDPBnp4cnh28jMmOJ2VdUtbaNz4zCvCy+UDh9KohQcJdtgb/xZO4VEEoevsBEVIWW88rgz3/zmS1jlzx5by7HFpE1C7+LD0/rFJ0WlchaDC10XYuPJViSFcZXgYtrAQEdnDjUlKb6GVqSVYhOJmp7KbJA9e/GTFbhIr4MFP2Dnrx1DxX4NMbBw3Yj3c0GGldfL38WJ7Hodda/wxfjHuILaQUF41kv3X+rW/bkWjoKkw+/pWZF/cBYzO/JBEOHATmgIFkm6jgnNUQoim9WyeLRbVrm4fholSzDOP3nZnDeKMP1BrIpiPL+21Wy0LGH1+FUsLVXWJ6GZI04/Zd/s9myLKtVrthQIkfSTB4bhfTnCug5dkWJrH/Pnuxdwvj+P4KqaVDT1NlhY+JPp4uyyC7FjXcuNa7AfxG/PA3jmYhOxBmz/nfhN5SKLCM6e49X4tTI6kYk7ayUdbgvCpKmaZIUd82I0pNFWQY6/nWHpCtqZLkvp4aRTkWJrDe/VMqtsFSywjq0TU3QjtD8hDWM5ySsAEWyNsbbL1/d58lOXmExd6Hf5xo/nK0Qfn1nXhaavtsBiShqZBFcL/z99vHB6cJsNKap/ivde/HhAwV0HOqJqA16ctY5TnWwefc4mmUlXBKcvlxy0ELJtYCcX4ALhtkUpFBWTNA9202mo3H6m3sl5WCjd4aSUzHQ6d2LRyyoFJUw9t49P348nT5751xJywKgeneKyPEFu69dmiXNMQ7ev38/xPNrWRZwrMMnT5787F25QssW1uUkCWhNKsLvcA7xpDNZhPNL3EcKczqT+ioST8zHJ8FkfSouRbdr/k/0sqnSsvH52YyEmqIo5OSZhKrWlAeZjijHVBt1RZEbW/osQbm2bNLWGvMZlGRl/ii/IKT5wYmPYYmKtvjO5xacTrXnUlKkpmW5veRy6MR3d9wLDeNe0ubH9Ybk5CNyn2z2I67Rp6VPy5LnZHFbHUge6B03Niv20C2JJpTIYSpctQXjv1LUs6BpAdApmqbZHoFhEeJvOkdLuWHN5Sy9XakpEMuqtWVFqbdNiL+Z+PUmfi1ga15RVsQSCTtBqbU4neuJQoOixtJ5WcANpFgWxwmKXBpy3EBQRBxRnF5W1Cp535LFeM41JEXF87FP4o2ShAVSsoALY1kACE0xbmGoK2J8eUxkkYunXIq3H1pyrQyGdkjVDsQ6WYoQyyrJq2RhxjjmBvUmRaZALEv98OpClrpWlji79AVQkQWXro3lhavh58gCVq0pU5TcCR9kOc4nyZpNQ+DURKVG2dmSFznLLZbnZElLsoSUrBHsKThtUXQtnJPVg53LZNXEfvJ6JqtU8UjaqlB17tiFrIY2SmTFTWyaoi7I6tQUEddVTreWyKqam/FPa01aqncsZ0gsBNVqEIzEEeACVdF6OuBcCddXY6C7rZpsjbGPBlQUrWbaZaXWHXN6oGkBnn8Orl1Dao7SKtvkz6eZBFWtg6KvClLFBqM2OeUC4jwGJUkrklVhyYRQHnCWD83i1qatSvhdp6hpsEL7H2vVV7x0yHYDOO9eTogPTqRnHjIYDAaDwWAwGAwGg8FgMBgMBoPBYDAYDAaDwWAwGAwGg8FgfAH+Bzax5mEabiQ3AAAAAElFTkSuQmCC" alt="Linux">
+    </div>
+
+    <button class="accordion">MacOS</button>
+    <div class="panel">
+      <p>Optimizado para dispositivos Apple.</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5TahOD7YTmZlwmIGxhTnmk2ox4z0lRM1a7g&s" alt="MacOS">
+    </div>
+
+    <button class="accordion">DOS</button>
+    <div class="panel">
+      <p>Basado en comandos, usado en PCs antiguos.</p>
+      <img src="https://e7.pngegg.com/pngimages/821/452/png-clipart-disk-operating-system-operating-systems-ms-dos-computer-microsoft-green-windmill-purple-violet-thumbnail.png" alt="MS-DOS">
+    </div>
+  </div>
+</div>
+
+<!-- SEMANA 4 -->
+<div id="semana4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('semana4')">&times;</span>
+    <h2>Semana 4 - Internet y Redes</h2>
+    <p>Uso de internet, páginas web, redes sociales y aulas virtuales.</p>
+    
+    <button class="accordion">Navegadores</button>
+    <div class="panel">
+      <p>Chrome, Firefox, Edge permiten navegar en la web.</p>
+      <img src="https://www.adslzone.net/app/uploads-adslzone.net/2016/02/navegadores-1.jpg" alt="Navegadores">
+    </div>
+
+    <button class="accordion">Páginas Web y Blogs</button>
+    <div class="panel">
+      <p>Las páginas web muestran información; los blogs publican contenidos periódicos.</p>
+      <img src="https://www.mundocuentas.com/img-servicios/blogger.png" alt="Páginas Web">
+    </div>
+
+    <button class="accordion">Redes Sociales</button>
+    <div class="panel">
+      <p>Facebook, Instagram, Twitter facilitan la comunicación y el marketing digital.</p>
+      <img src="https://www.juancmejia.com/wp-content/uploads/2020/04/Facebook-vs-Instagram-vs-Twitter.png" alt="Redes Sociales">
+    </div>
+
+    <button class="accordion">Aulas Virtuales</button>
+    <div class="panel">
+      <p>Ejemplos: Moodle, Google Classroom para educación en línea.</p>
+      <img src="https://www.criativaead.com.br/wp-content/uploads/2022/06/moodle-google-classroom-comparativo-1024x640.jpg" alt="Aulas Virtuales">
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Sígueme en:</p>
+  <div class="social">
+    <a href="https://www.facebook.com/people/Yaneth-Centeno/pfbid02HVssvr3jpqGWKQ5v7fS3a44sXs5ESD62wfWScrK7jFTa9UntUQSDMyXMeV8ETmcEl/" target="_blank">Facebook</a>
+<h4>Elaborado por : Yaneth Centeno</h4>
+  </div>
+</footer>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  var acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
+    });
+  }
+</script>
+
+</body>
+</html>
